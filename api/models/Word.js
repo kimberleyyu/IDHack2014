@@ -10,7 +10,7 @@ module.exports = {
 
   attributes: {
   	
-  	term: {
+  	term: {	
   		type: 'string',
   		required: true
   	},
@@ -38,10 +38,13 @@ module.exports = {
 
   beforeCreate: function(values, next) {
     // call values because beforeCreate calls for the input of attributes
-    if (!validateYoutube(values.link)) { 
-        return next({err: ["This link isn't valid!"]});
-      }
-      next();
+    id = validateYoutube(values.link)
+    if (!id) { 
+      return next({err: ["This link isn't valid!"]});
+    }
+    values.link = id;
+    next();
+  }
 };
 
 function validateYoutube(url) {
