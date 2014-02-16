@@ -14,6 +14,7 @@
  *
  * @docs        :: http://sailsjs.org/#!documentation/controllers
  */
+var bcrypt = require('bcrypt');
 
 module.exports = {
  
@@ -47,7 +48,7 @@ module.exports = {
 						}
 						if (result) {
 							req.session.user = user;
-							res.redirect('/home/index');
+							res.redirect('/');
 						} 
 						// Else, password incorrect
 						else {

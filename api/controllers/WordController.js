@@ -21,10 +21,18 @@ module.exports = {
   	var term = req.param("term")
 
   	Word.findOne({term: term}).done(function(err, word) {
-  		return res.view(word);
+  		if (word) {
+  		return res.view({term: word.term, link: word.link,
+  			english_def: word.english_def, kiswahili_def: word.kiswahili_def});
+  		}
+
+  		return res.json({error: "Sorry, we could not find the word you're looking for"})	
   	})
   },
 
+  upload: function(req, res, next) {
+  	res.view()
+  },
 
   /**
    * Overrides for the settings in `config/controllers.js`

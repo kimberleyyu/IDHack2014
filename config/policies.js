@@ -18,10 +18,6 @@ module.exports.policies = {
   // (`true` allows public access) 
   '*': true,
 
-  WordController: {
-  	update: 'isLoggedIn'
-  }
-
   /*
 	// Here's an example of adding some policies to a controller
 	RabbitController: {

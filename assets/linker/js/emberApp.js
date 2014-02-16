@@ -16,6 +16,6 @@ App.WordsRoute = Ember.Route.extend({
 
 App.WordRoute = Ember.Route.extend({
 	model: function(params) {
-		return words.findBy('_id', params.word_id)
+		return words.findBy('_id', params.word_idd)
 	}
 });
