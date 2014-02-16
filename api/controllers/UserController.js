@@ -32,41 +32,42 @@ module.exports = {
 		// this finds a user, where we are looking for a user whose email address matches
 		// the email address that we have give through login 
 		// after you are /done then can either return an error or  a user 
-		User.findOne({ email: email}).done(function(err, user)) { 
-				// error is only something that is returned if something 
-				if (err) { 
-					res.send(500, {error: "DB Error"}); 
-				} else {  
-
-					if(user) {
-						// Validate that the password is true, and then we can directly compare two functions 
-						// can either return three things an error a result or a password 
-						bcrypt.compare(password, user.encryptedPassword, function(err, result)) { 
-
-							if (result) { 
-								req.session.user = user; 
-								res.redirect('/');	
-							}
-
-
-							else { 
-
-								res.view({
-									error: "Wrong Password"
-								});		
-
-
-							}	
+		User.findOne({ email: email }).done(function(err, user) {
+			// If there's an error
+			if (err) {
+				res.send(500, {error: "DB Error"});
+			} else {
+				// If a User exists
+				if (user) {
+					// Validate password
+					bcrypt.compare(password, user.encryptedPassword, function(err, result) {
+						// If passwords match, log in User
+						if (err) {
+							return res.send(500, {error: "DB Error"})
 						}
-					}
-					else {
-						res.view({
-							error: "Email not found"
-						});
-					}
+						if (result) {
+							req.session.user = user;
+							res.redirect('/home/index');
+						} 
+						// Else, password incorrect
+						else {
+							// res.send(400, {error: "Wrong Password"});
+							res.view({
+								error: "Wrong Password"
+							});
+						}
+					});
+				} 
+				// Else, User does not exist
+				else {
+					// res.send(404, {error: "User not found"});
+					res.view({
+						error: "Email not found"
+					});
 				}
-		}
-	}
+			}
+		});
+	},
 
 
   _config: {}
