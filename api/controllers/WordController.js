@@ -17,7 +17,13 @@
 
 module.exports = {
     
-  
+  search: function(req, res, next) {
+  	var term = req.param("term")
+
+  	Word.findOne({term: term}).done(function(err, word) {
+  		return res.view(word);
+  	})
+  },
 
 
   /**

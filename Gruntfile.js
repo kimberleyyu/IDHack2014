@@ -58,6 +58,35 @@ module.exports = function (grunt) {
 
     // *->    put other dependencies here   <-*
 
+    // JQuery
+    'linker/js/jquery.js',
+
+    // Bootstrap
+    'linker/js/bootstrap.js',
+
+    // JQuery plugins
+    'linker/js/jquery.themepunch.plugins.min.js',
+
+    'linker/js/jquery.themepunch.revolution.min.js',
+
+    'linker/js/jquery.arbitrary-anchor.js',
+
+    'linker/js/jquery.prettyPhoto.js',
+
+    'linker/js/waypoints.min.js',
+
+    // Handlebars
+    'linker/js/handlebars-v1.2.1.js',
+
+    // Ember
+    'linker/js/ember.js',
+
+    // Ember App
+    'linker/js/emberApp.js',
+
+    // Etc.
+    'linker/js/ddlevelsmenu.js',
+
     // All of the rest of your app scripts imported here
     'linker/**/*.js'
   ];

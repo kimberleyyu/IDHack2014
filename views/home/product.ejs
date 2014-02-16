@@ -1,0 +1,133 @@
+	<!-- Header  Starts -->
+		
+		<header>
+			<!-- Container -->
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 col-sm-4"> 
+						<!-- Logo -->
+						<div class="logo">
+							<h1><a href="#"> <i class="fa fa-cloud"></i> kls</a></h1>
+						</div>
+					</div>
+					<div class="col-md-8 col-sm-8">
+						<!-- Navigation -->
+						<div class="navi">
+							<!-- Menu --> 
+							<div id="ddtopmenubar" class="mattblackmenu">
+								<!-- UnorderedList -->
+								<ul>
+									<!-- List -->
+									<li><a href="index.html">Home</a></li>
+									<li><a href="#" rel="ddsubmenustyle">Pages<span class="caret"></span></a>
+										<!-- Dropdown Submenu Style -->
+										<ul id="ddsubmenustyle" class="ddsubmenustyle">
+											<li><a href="features.html">Features</a></li>
+											<li><a href="portfolio.html">Portfolio</a></li>
+											<li><a href="product.html">Product</a></li>
+											<li><a href="testimonials.html">Testimonials</a></li>
+											<li><a href="pricing.html">Pricing</a></li>
+											<li><a href="blog.html">Blog</a></li>
+										</ul>
+									</li>
+									<li>{{#link-to 'words'}}Words{{/link-to}}</li>
+									<li><a href="about us.html">About</a></li>
+									<li><a href="contact us.html">Contact</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!-- Dropdown NavBar -->
+					<div class="navis"></div>
+				</div>
+			</div>
+		</header>
+		
+		<!-- Header Ends -->
+{{outlet}}
+</script>
+
+
+<script type="text/x-handlebars" id="words">
+
+
+<div class="pricing br-black text-center block">
+<div class="container">
+	<table>
+		{{#each}}
+			<tr>
+			{{#link-to 'word' this}}
+			<td>{{term}}</td>
+			{{/link-to}}
+			<tr>
+		{{/each}}
+	</table>
+</div>
+</div>
+	{{outlet}}
+</script>
+
+<script type="text/x-handlebars" id="word">
+		<!-- Product Starts-->
+		<div class="product br-green block">
+			<!-- Container -->
+			<div class="container">
+			<!-- Page Title -->
+				<div class="page-title text-center wordblock">
+					<h2><strong>{{term}}</strong></h2>
+				</div>
+				
+				<!-- Product One -->
+				
+				<div class="product-one text-center">
+					<!-- Product One Item -->
+					<div class="product-one-item">
+						<!-- Product One Image -->
+						<div class="product-one-image animated">
+							<!-- Youtube Video -->
+							<a href="#"><iframe width="420" height="345"
+								src="http://www.youtube.com/embed/{{unbound link}}">
+								</iframe></a>
+						</div>
+						<div class="page-title text-center wordblock">
+							<h3><strong>Acid Variation</strong></h3>
+						</div>
+						<div class="product-one-image animated">
+							<!-- Youtube Video -->
+							<a href="#"><iframe width="420" height="345"
+								src="http://www.youtube.com/embed/286HMVWQ7ww">
+								</iframe></a>
+						</div>
+						<div class="page-title text-center">
+							<h3><strong>English Definition: </strong></h2>
+							<h3>A chemical substance that neutralizes alkalis, dissolves some metals, and turns litmus red; typically, a corrosive or sour-tasting liquid.</h3>
+						</div>
+						<div class="page-title text-center wordblock">
+							<h3><strong>Kiswahili Definition: </strong></h2>
+							<h3>Asidi.</h3>
+						</div>
+						<!-- Buttons -->
+						<a href="#" class="btn btn-danger btn-lg">Edit</a>&nbsp;
+						</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- Product Ends -->
+		
+		<!-- Footer Starts -->
+	
+		<footer class="text-center">
+			<!-- Container -->
+			<div class="container">
+				<!-- Footer Content -->
+				<div class="footer-content">
+					<p>Copyright &copy; 2013 - <a href="#">Company name</a>
+				</div>
+			</div>
+		</footer>
+		
+		<!-- Footer Ends -->
+		
+		<!-- Scroll To Top -->
+			<span class="top"><a href="#"> <i class="fa fa-chevron-up"></i> </a></span>

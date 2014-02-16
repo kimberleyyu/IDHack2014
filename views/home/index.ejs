@@ -1,3 +1,4 @@
+
 <script type="text/x-handlebars">
 <body>
 <div id="navbar" class="navbar navbar-inverse">
@@ -22,9 +23,9 @@
   </div>
 </div>
 <h1>Words</h1>
-
 {{outlet}}
 </script>
+
 
 
 
@@ -32,12 +33,10 @@
 <table>
 {{#each}}
 <tr>
+{{#link-to 'word' this}}
 <td>{{term}}</td>
-<td>
-<iframe width="560" height="315" src="//www.youtube.com/embed/{{unbound link}}") frameborder="0" allowfullscreen></iframe>
-</td>
 <tr>
+{{/link-to}}
 {{/each}}
 </table>
 </script>
-</body>
