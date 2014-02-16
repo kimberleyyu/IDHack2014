@@ -34,6 +34,18 @@ module.exports = {
   		type: 'array'
   	}
     
-  }
+  },
 
+  beforeCreate: function(values, next) {
+    // call values because beforeCreate calls for the input of attributes
+    if (!validateYoutube(values.link)) { 
+        return next({err: ["This link isn't valid!"]});
+      }
+      next();
 };
+
+function validateYoutube(url) {
+  var p = /^(?:https?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/;
+ return (url.match(p)) ? RegExp.$1 : false;
+
+}
